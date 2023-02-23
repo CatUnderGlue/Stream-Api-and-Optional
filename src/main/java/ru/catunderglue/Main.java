@@ -30,10 +30,9 @@ public class Main {
 
     // Task 2
     private static void printNumberOfEven(List<Integer> integers){
-        List<Integer> evenIntegers = integers.stream()
+        System.out.println("Кол-во чётных чисел: " + integers.stream()
                 .filter(x -> x % 2 == 0)
-                .toList();
-        System.out.println("Кол-во чётных чисел: " + evenIntegers.size());
-        evenIntegers.forEach(System.out::println);
+                .peek(System.out::println)
+                .count());
     }
 }
